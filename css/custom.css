@@ -1,0 +1,54 @@
+input[type=text]:not(.browser-default) {
+    border: 2px solid #BDBDBD !important;
+    border-radius: 3px !important;
+}
+input:not(.browser-default):focus:not([readonly]) {
+/*
+    border-top: 0px solid transparent !important;
+    border-left: 0px solid transparent!important;
+    border-right: 0px solid transparent !important;
+    border-bottom: 2px solid #4CAF50!important;
+*/
+}
+input:not(.browser-default).validate.valid {
+    border: none !important;
+    border-bottom: 1px solid #4CAF50!important;
+}
+label.formlabel {
+    margin-left: 10px;
+}
+label.formlabel.active {
+    transform: translate(-10px,-140%) !important;
+}
+
+#submitBtn {
+    height: 55px !important;	
+    width: 267px !important;	
+    border-radius: 100px !important;	
+    background-color: #5EA3BD !important;	
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.4) !important;
+
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+#btnLabel {
+    line-height: 100px;
+}
+
+/*input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea*/
+
+
+
+
+/* ---- changes I made to materialize.css ---- */
+
+/*
+.input-field label:not(.label-icon).active {
+  font-size: 0.8rem;
+  -webkit-transform: translate(-10px, -140%);
+          transform: translate(-10px, -140%);
+}
+*/
+
+

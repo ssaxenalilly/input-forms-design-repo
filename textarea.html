@@ -1,0 +1,89 @@
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+<!--    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>-->
+<!--    <link type="text/css" rel="stylesheet" href="css/text-inputs-styles.css"/>-->
+    
+    <link type="text/css" rel="stylesheet" href="css/textarea.css"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+
+<body>
+    <!-- custom text area -->
+    <div id="myTextArea" class="" contenteditable="true">
+        <span id="floatingLabel">Enter text</span>
+        <span id="textAreaContent">Enter text</span>
+<!--
+        <div id="charCountWrapper">
+            <span contenteditable="true" id="charCounter"></span>
+        </div>
+-->
+    </div>
+
+</body>
+    
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js">
+    </script>
+
+    <script>        
+        var maxCharacters = 50;
+        $('#charCounter').text(maxCharacters);
+        
+        // plugin - sets cursor to end of string
+        function placeCaretAtEnd(el) {
+            el.focus();
+            if (typeof window.getSelection != "undefined"
+                    && typeof document.createRange != "undefined") {
+                var range = document.createRange();
+                range.selectNodeContents(el);
+                range.collapse(false);
+                var sel = window.getSelection();
+                sel.removeAllRanges();
+                sel.addRange(range);
+            } else if (typeof document.body.createTextRange != "undefined") {
+                var textRange = document.body.createTextRange();
+                textRange.moveToElementText(el);
+                textRange.collapse(false);
+                textRange.select();
+            }
+        }
+        
+        $('#myTextArea').click(function() {
+            $('#textAreaContent').text('');
+//            $('#textAreaContent').css({"color":"red"});    
+        });
+
+        // text area behavior on any focussed keystroke
+        $('#myTextArea').bind('input', function(){
+            var charCount = $('#charCounter');
+            var currentStr =  $('#textAreaContent').text();
+            var newlines = $($(this).html()).length;
+            var currentStrLength = currentStr.length;  
+            
+            if (!!newlines) newlines -= 1;
+            currentStr += newlines;
+            
+            if (currentStrLength > (maxCharacters - 11))
+                charCount.addClass('over');
+            else
+                charCount.removeClass('over');
+            
+            charCount.text(maxCharacters - currentStrLength);
+            
+
+            if((maxCharacters - currentStrLength) < 0) {
+                var highlightStr = $('#textAreaContent').text().replace(/.{50}(.*)/g, "<span class='highlightExcessChars'>$1<span>");
+                var newStr = currentStr.slice(0, 50) + highlightStr;
+                $('#textAreaContent').html(newStr);
+                var textAreaContent = $('#textAreaContent');
+                placeCaretAtEnd( document.getElementById("textAreaContent") );
+            }
+        });
+
+    </script>
+</html>
