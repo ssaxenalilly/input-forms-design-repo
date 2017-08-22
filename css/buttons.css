@@ -1,0 +1,30 @@
+.custom-btn  {
+	height: 44px;
+    width: 200px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+	border-radius: 100px;
+	background-color: #501C73;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+}
+
+.custom-btn:hover  {
+	background-color: rgba(80,28,115,0.85);
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.custom-btn span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+@media screen and (max-width: 380px) {
+    
+    .custom-btn  {
+        height: 44px;
+        width: inherit!important;
+    }
+}

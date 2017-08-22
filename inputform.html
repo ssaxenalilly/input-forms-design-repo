@@ -8,6 +8,9 @@
         <link type="text/css" rel="stylesheet" href="css/text-inputs-styles.css"/>
         <link type="text/css" rel="stylesheet" href="css/select-dropdown.css"/>
         <link type="text/css" rel="stylesheet" href="css/checkbox.css"/>
+        <link type="text/css" rel="stylesheet" href="css/radiobuttons.css"/>
+<!--        <link type="text/css" rel="stylesheet" href="css/switch-slider.css"/>-->
+        <link type="text/css" rel="stylesheet" href="css/buttons.css"/>
         
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         
@@ -15,10 +18,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         
         <style>
+            
+            :root {
+/*                --primary-color: #26a69a;*/
+                --primary-color: #501C73;
+
+            }
             body{
                 font-family: 'Open Sans', sans-serif;
                 background-color: #ecebeb;
 /*                background-color: #f7f7f7;*/
+            }
+            
+            .waves-effect.waves-purple .waves-ripple {
+              background-color: rgba(80,28,115,0.75);
             }
             
             .row .col {
@@ -49,6 +62,8 @@
             .checkbox-label {
                 color: #501C73 !important; 
             }
+            
+            
             
             /* ----- text area styles ----- */
 /*
@@ -81,8 +96,9 @@
             <div class="row">
                 <div class="col s1 m2"></div>
                 <div class="col s10 m8">
-                    <h5 style="text-transform: uppercase; color: #501C73">Register For Updates and Request a Meeting</h5>
-                    <h6>We’ll contact you with important product updates, including clinical and coverage information. Our local Sales Specialist may also contact you to schedule a meeting.</h6>
+                    <br/>
+                    <h5 style="text-transform: uppercase; color: #501C73">Primary Title For the Form</h5>
+                    <h6>A brief description of the intent behind filling out this form. </h6>
                     <br />
                     
                     <!-- dummy form -->
@@ -96,23 +112,6 @@
                             <div class="input-field col s12 m12">
                                 <input id="last_name" type="text" class="validate">
                                 <label for="last_name" class="formlabel">Last Name</label>
-                            </div>
-                            
-                            <div class="input-field custom-dropdown col s12 m12">
-                                <select>
-                                    <option value="" disabled selected>Choose your Specialty</option>
-                                    <option value="1">Abdominal Radiology</option>
-                                    <option value="2">Abdominal Surgery</option>
-                                    <option value="3">Acute Care Pediatrics (Apns Only)</option>
-                                    <option value="4">Acute Care</option>
-                                    <option value="5">Addiction Medicine</option>
-                                    <option value="6">Addiction Psychiatry</option>
-                                    <option value="7">Biochemical & Medical Genetics</option>
-                                    <option value="8">Blood Banking /transfusion Medicine</option>
-                                    <option value="9">Cardiothoracic Radiology</option>
-                                    <option value="10">Cardiovascular Disease</option>
-                                </select>
-                                <label class="dropdown-label">Specialty</label>
                             </div>
                             
                             <div class="input-field col s12 m12">
@@ -204,67 +203,68 @@
                                 <label for="email" class="formlabel" data-error="incorrect format or emails do not match">Confirm Email</label>
                             </div>
                             
-                            <div href="" class="checkboxwrapper waves-effect waves-teal">
+                            <div href="" class="checkboxwrapper waves-effect waves-purple" style="margin-top: 12px;">
                                 <input type="checkbox" class="filled-in" id="filled-in-box" />
-                                    <label class="checkbox-label" for="filled-in-box">I would like a Sales Specialist to contact me to schedule a meeting.</label>
+                                    <label class="checkbox-label" for="filled-in-box">I would like a Representative to contact me to schedule a meeting.</label>
+                            </div>
+                            
+                            <div style="margin-top: 20px;">
+                                <span style="color: #501C73; font-size: 16px">Did you enjoy filling this form?</span>
+                                <br />
+                                <div href="" class="radiobtnwrapper waves-effect waves-purple">
+                                    <input class="with-gap" name="group1" type="radio" id="radio1"  />
+                                    <label class="radio-label" for="radio1">Yes</label>
+                                </div>
+                                <br />
+                                <div href="" class="radiobtnwrapper waves-effect waves-purple">
+                                    <input class="with-gap" name="group1" type="radio" id="radio2"  />
+                                    <label class="radio-label" for="radio2">No</label>
+                                </div>
+                                <br />
+                                <div href="" class="radiobtnwrapper waves-effect waves-purple">
+                                    <input class="with-gap" name="group1" type="radio" id="radio3"  />
+                                    <label class="radio-label" for="radio3">Undecided</label>
+                                </div>
                             </div>
                             
                             <br />
+                            <hr />
                             
-                            <!-- text area -->
-<!--
-                            <div class="row">
-                                <div class="col s12">
-                                    <h5>Briefly explain why you are interested in this savings program:</h5>
+                            <p>
+                                Lastly, to prove that you're indeed human, please toggle the switch below to 'HUMAN':
+                                <div class="switch">
+                                    <label style="color: #501C73; font-size: 16px">
+                                        EVIL AI
+                                        <input type="checkbox">
+                                        <span class="lever"></span>
+                                        HUMAN
+                                    </label>
                                 </div>
-                                <div class="input-field col s12">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label id="textarea1-label" for="textarea1">Enter description here...</label>
+                            </p>
+<!--
+                            <label class="custom-switch">
+                                <input type="checkbox">
+                                <div class="custom-slider round"></div>
+                            </label>
+-->
+                            
+                            
+                            <br />
+                            
+                            <!-- submit button -->
+                            <div class="row">
+                                <div class="col s12" style="">
+                                    <div class="custom-btn waves-effect waves-light" id="">
+                                        <span>SUBMIT</span>
+                                    </div>
+<!--                                    <a class="waves-effect waves-light btn">submit</a>-->
                                 </div>
                             </div>
--->
+                            
                             
                         </form>
                     </div>
-                    
-                    <!-- checkboxes -->
-                    
-<!--
-                    <div class="row">
-                        <div class="col s12">
-                            <h6>To receive your savings, just answer the eligibility questions below.<br/>
-                                <strong>Please choose the options that apply to you:</strong></h6>
-                            
-                            <ul>
-                                <li href="" class="checkboxwrapper waves-effect waves-teal">
-                                    <input type="checkbox" class="filled-in" id="filled-in-box" />
-                                    <label for="filled-in-box">I confirm that I am a resident of the United States or Puerto Rico.</label>
-                                </li><br /><br />
-                                <li href="" class="checkboxwrapper waves-effect waves-teal">
-                                    <input type="checkbox" class="filled-in" id="filled-in-box" />
-                                    <label for="filled-in-box">I confirm that I am age 18 or older.</label>
-                                </li><br /><br />
-                                <li href="" class="checkboxwrapper waves-effect waves-teal">
-                                    <input type="checkbox" class="filled-in" id="filled-in-box" />
-                                    <label for="filled-in-box">I confirm that my prescription claims for ProductX cannot be reimbursed, in whole or in part, by any government‑funded program, including Medicaid, Medicare, Medicare Part D, Medigap, DOD, VA, TRICARE/CHAMPUS, or any state patient or pharmaceutical assistance program.</label>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
--->
-                    
-                    <!-- submit button -->
-                    <div class="row">
-                        <div class="col s12">
-<!--
-                            <div id="submitBtn">
-                                <span class="btnLabel">SUBMIT</span>
-                            </div>
--->
-                            <a class="waves-effect waves-light btn">submit</a>
-                        </div>
-                    </div>
-                    
+                
                 </div>
                 <div class="col s1 m2"></div>
             </div>
@@ -288,3 +288,44 @@
         
     </body>
 </html>
+
+
+
+<!-- text area -->
+<!--
+                            <div class="row">
+                                <div class="col s12">
+                                    <h5>Briefly explain why you are interested in this savings program:</h5>
+                                </div>
+                                <div class="input-field col s12">
+                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <label id="textarea1-label" for="textarea1">Enter description here...</label>
+                                </div>
+                            </div>
+-->
+                
+                
+                    <!-- checkboxes -->
+<!--
+                    <div class="row">
+                        <div class="col s12">
+                            <h6>To receive your savings, just answer the eligibility questions below.<br/>
+                                <strong>Please choose the options that apply to you:</strong></h6>
+                            
+                            <ul>
+                                <li href="" class="checkboxwrapper waves-effect waves-teal">
+                                    <input type="checkbox" class="filled-in" id="filled-in-box" />
+                                    <label for="filled-in-box">I confirm that I am a resident of the United States or Puerto Rico.</label>
+                                </li><br /><br />
+                                <li href="" class="checkboxwrapper waves-effect waves-teal">
+                                    <input type="checkbox" class="filled-in" id="filled-in-box" />
+                                    <label for="filled-in-box">I confirm that I am age 18 or older.</label>
+                                </li><br /><br />
+                                <li href="" class="checkboxwrapper waves-effect waves-teal">
+                                    <input type="checkbox" class="filled-in" id="filled-in-box" />
+                                    <label for="filled-in-box">I confirm that my prescription claims for ProductX cannot be reimbursed, in whole or in part, by any government‑funded program, including Medicaid, Medicare, Medicare Part D, Medigap, DOD, VA, TRICARE/CHAMPUS, or any state patient or pharmaceutical assistance program.</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+-->
