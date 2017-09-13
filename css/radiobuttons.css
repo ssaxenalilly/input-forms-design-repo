@@ -8,7 +8,7 @@
     padding-top: 7px;
     padding-bottom: 7px;
     padding-left: 7px;
-    padding-right: 14px;
+    padding-right: 12px; /* radio control has a padding of 4px. 12px to accomodate for that */
     
     background-color: transparent;
     color: #501C73;
